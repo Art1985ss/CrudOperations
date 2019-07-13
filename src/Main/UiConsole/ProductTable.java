@@ -55,6 +55,7 @@ public class ProductTable extends JPanel {
         table.setAutoCreateRowSorter(true);
         table.repaint();
         this.add(new JScrollPane(table));
+        this.validate();
         this.repaint();
         mainFrame.repaint();
     }
@@ -80,6 +81,7 @@ public class ProductTable extends JPanel {
         table.setAutoCreateRowSorter(true);
         table.repaint();
         this.add(new JScrollPane(table));
+        this.validate();
         this.repaint();
         mainFrame.repaint();
     }
@@ -164,4 +166,6 @@ public class ProductTable extends JPanel {
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
     }
+
+
 }

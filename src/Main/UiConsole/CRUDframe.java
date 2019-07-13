@@ -47,6 +47,7 @@ public class CRUDframe extends JFrame {
         if (this.panelRight != null) this.panelRight.repaint();
         if (this.panelLeft != null) this.panelLeft.repaint();
         if (this.splitPane != null) this.splitPane.repaint();
+        super.repaint();
     }
 
     private void populateLeft(){
