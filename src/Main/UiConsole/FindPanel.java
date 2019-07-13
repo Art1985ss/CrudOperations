@@ -21,7 +21,10 @@ public class FindPanel extends JPanel {
     public FindPanel(Service service, ProductTable table) {
         this.table = table;
         this.service = service;
-        this.setLayout(new GridLayout(0,1));
+        GridLayout gridLayout = new GridLayout(0,1);
+        gridLayout.setVgap(5);
+        gridLayout.setHgap(3);
+        this.setLayout(gridLayout);
 
         this.populatePanelFindById();
         this.add(panelFindById);
