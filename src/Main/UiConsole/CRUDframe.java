@@ -1,10 +1,7 @@
-package UiConsole;
+package Main.UiConsole;
 
-import Database.*;
-//import Service.*;
-import Service.Service;
-import javafx.scene.control.ComboBox;
-import org.w3c.dom.Text;
+import Main.Database.*;
+import Main.Service.*;
 
 import javax.swing.*;
 import java.awt.*;

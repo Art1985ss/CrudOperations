@@ -1,4 +1,4 @@
-package Database;
+package Main.Database;
 
 import java.math.BigDecimal;
 import java.util.Objects;

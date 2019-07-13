@@ -1,7 +1,7 @@
-package Service;
+package Main.Service;
 
-import Database.Category;
-import Database.Product;
+import Main.Database.Category;
+import Main.Database.Product;
 
 import java.math.BigDecimal;
 import java.util.List;

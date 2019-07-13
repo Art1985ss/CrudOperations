@@ -1,8 +1,8 @@
-package Service;
+package Main.Service;
 
-import Database.Category;
-import Database.Product;
-import Database.ProductDatabase;
+import Main.Database.Category;
+import Main.Database.Product;
+import Main.Database.ProductDatabase;
 
 import javax.swing.*;
 import java.awt.*;
@@ -11,13 +11,15 @@ import java.awt.event.ActionListener;
 import java.math.BigDecimal;
 import java.util.List;
 import java.util.Map;
-import java.util.Random;
 
 public class Service implements DatabaseService{
     private ProductDatabase productDatabase;
 
     public Service(ProductDatabase productDatabase) {
         this.productDatabase = productDatabase;
+    }
+    public Service(){
+        this.productDatabase = new ProductDatabase();
     }
 
     public boolean addProduct(Category category, Map<String, String> productData){
@@ -96,7 +98,7 @@ public class Service implements DatabaseService{
     }
 
     public void showWarning(String message){
-        JFrame frame = new JFrame("Service error!");
+        JFrame frame = new JFrame("Main.Service error!");
         frame.setLayout(new BorderLayout());
         frame.add(new Label(message),BorderLayout.PAGE_START);
         JButton btn = new JButton("Ok");

@@ -1,7 +1,7 @@
-package UiConsole;
+package Main.UiConsole;
 
-import Database.Category;
-import Service.Service;
+import Main.Database.Category;
+import Main.Service.*;
 
 import javax.swing.*;
 import java.awt.*;

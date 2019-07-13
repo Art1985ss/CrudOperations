@@ -1,4 +1,4 @@
-package Database;
+package Main.Database;
 
 public enum Category {
     FRUIT, VEGETABLE, MUSHROOM, MEAT, GRAIN;
