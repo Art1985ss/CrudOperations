@@ -32,7 +32,7 @@ public class FindPanel extends JPanel {
         this.setVisible(true);
     }
     public void populatePanelFindById(){
-        panelFindById = new JPanel(new BorderLayout());
+        panelFindById = new JPanel(new GridLayout(0,2));
         JLabel label = new JLabel("Enter product id you want to find");
         JTextField textField = new JTextField();
         textField.setMinimumSize(new Dimension(50,0));
@@ -45,16 +45,33 @@ public class FindPanel extends JPanel {
                 List<Product> productList = new ArrayList<>();
                 try{
                     productList.add(service.findById(Long.parseLong(textField.getText())));
+                    table.repopulateTable(productList);
                 }catch (NumberFormatException e){
-
+                    table.repopulateTable(service.getProductList());
+                    JOptionPane.showMessageDialog(null, "Invalid ID");
+                }catch (NullPointerException e){
+                    table.repopulateTable(service.getProductList());
+                    JOptionPane.showMessageDialog(null, "Invalid ID");
                 }
-                table.repopulateTable(productList);
+            }
+        });
+        JButton removeBtn = new JButton("Remove it.");
+        removeBtn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                try {
+                    service.removeById(Long.parseLong(textField.getText()));
+                }catch (NumberFormatException e){
+                    JOptionPane.showMessageDialog(null, "Invalid ID");
+                }
+                table.repopulateTable(service.getProductList());
             }
         });
 
-        panelFindById.add(label, BorderLayout.WEST);
-        panelFindById.add(textField, BorderLayout.EAST);
-        panelFindById.add(btn, BorderLayout.PAGE_END);
+        panelFindById.add(label);
+        panelFindById.add(textField);
+        panelFindById.add(btn);
+        panelFindById.add(removeBtn);
         panelFindById.setVisible(true);
     }
 

@@ -66,7 +66,7 @@ public class Service implements DatabaseService{
 
     @Override
     public boolean removeById(Long id) {
-        return false;
+        return productDatabase.removeById(id);
     }
 
     @Override
