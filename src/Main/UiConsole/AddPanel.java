@@ -31,7 +31,7 @@ public class AddPanel extends JPanel {
     private void createAddForm(){
         JFrame addFrame = new JFrame("Add new product");
         Container container = addFrame.getContentPane();
-        GridLayout layout = new GridLayout(0,2);
+        GridLayout layout = new GridLayout(0,2,3,3);
         container.setLayout(layout);
         Map<JLabel, JTextField> fields = new HashMap<>();
         String[] fieldsNames = {"Name", "Price", "Discount", "Description"};
