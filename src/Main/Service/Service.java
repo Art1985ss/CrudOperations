@@ -131,14 +131,14 @@ public class Service implements DatabaseService{
 
     public void populateProductList(int count){
         String[] fruits = {"Apple", "Apricot", "Avocado", "Banana", "Blackcurrant", "Blackberry", "Blueberry", "Cherry", "Coconut", "Grape", "Kiwi", "Lemon", "Lime", "Mango", "Nectarine", "Orange", "Strawberry"};
-        String[] veitables = {"Corn", "Broccoli", "Cucumber", "Capsicum", "Brussels sprouts", "Carrots", "Tomatoes", "Pumpkin", "Cabbage", "Potatoes", "Eggplant", "Lettuce", "Onions", "Green chilies", "Courgette"};
+        String[] vegetables = {"Corn", "Broccoli", "Cucumber", "Capsicum", "Brussels sprouts", "Carrots", "Tomatoes", "Pumpkin", "Cabbage", "Potatoes", "Eggplant", "Lettuce", "Onions", "Green chilies", "Courgette"};
         String[] mushrooms = {"Russula", "Aspen", "Greasers", "Saffron", "Gypsy", "Champignon", "Truffle"};
         String[] meat = {"Pork", "Beef", "Lamb", "Chicken", "Turkey", "Venison", "Duck", "Wild boar", "Bison", "Goose", "Rabbit", "Pheasant"};
         String[] grain = {"Barley", "Brown rice", "Buckwheat", "Bulgur", "Millet", "Oatmeal", "Popcorn"};
 
         Map<Category, String[]> productMap = new HashMap<>();
         productMap.put(Category.FRUIT, fruits);
-        productMap.put(Category.VEGETABLE, veitables);
+        productMap.put(Category.VEGETABLE, vegetables);
         productMap.put(Category.MUSHROOM, mushrooms);
         productMap.put(Category.MEAT, meat);
         productMap.put(Category.GRAIN, grain);
