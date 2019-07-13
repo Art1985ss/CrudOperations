@@ -9,8 +9,10 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.math.BigDecimal;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Random;
 
 public class Service implements DatabaseService{
     private ProductDatabase productDatabase;
@@ -125,6 +127,35 @@ public class Service implements DatabaseService{
         product = new Product("Carrot", new BigDecimal("0.3"), Category.VEGETABLE, new BigDecimal("0.1"), "");
         this.addProduct(product);
 
+    }
+
+    public void populateProductList(int count){
+        String[] fruits = {"Apple", "Apricot", "Avocado", "Banana", "Blackcurrant", "Blackberry", "Blueberry", "Cherry", "Coconut", "Grape", "Kiwi", "Lemon", "Lime", "Mango", "Nectarine", "Orange", "Strawberry"};
+        String[] veitables = {"Corn", "Broccoli", "Cucumber", "Capsicum", "Brussels sprouts", "Carrots", "Tomatoes", "Pumpkin", "Cabbage", "Potatoes", "Eggplant", "Lettuce", "Onions", "Green chilies", "Courgette"};
+        String[] mushrooms = {"Russula", "Aspen", "Greasers", "Saffron", "Gypsy", "Champignon", "Truffle"};
+        String[] meat = {"Pork", "Beef", "Lamb", "Chicken", "Turkey", "Venison", "Duck", "Wild boar", "Bison", "Goose", "Rabbit", "Pheasant"};
+        String[] grain = {"Barley", "Brown rice", "Buckwheat", "Bulgur", "Millet", "Oatmeal", "Popcorn"};
+
+        Map<Category, String[]> productMap = new HashMap<>();
+        productMap.put(Category.FRUIT, fruits);
+        productMap.put(Category.VEGETABLE, veitables);
+        productMap.put(Category.MUSHROOM, mushrooms);
+        productMap.put(Category.MEAT, meat);
+        productMap.put(Category.GRAIN, grain);
+        Random random = new Random();
+        for (int i = 0; i < count ; i++) {
+            int randomNumber = random.nextInt(Category.values().length);
+            Category category = Category.values()[randomNumber];
+            String name = productMap.get(category)[random.nextInt(productMap.get(category).length)];
+            Product product = new Product(
+                    name,
+                    new BigDecimal(random.nextInt(999) * 0.01),
+                    category,
+                    new BigDecimal(random.nextFloat() * 0.5),
+                    ""
+            );
+            this.addProduct(product);
+        }
     }
 
 

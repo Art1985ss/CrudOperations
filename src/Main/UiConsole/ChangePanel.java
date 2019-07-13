@@ -28,7 +28,7 @@ public class ChangePanel extends JPanel {
         constraints.fill = GridBagConstraints.HORIZONTAL;
         constraints.ipadx = 40;
         constraints.weightx = 0;
-        constraints.gridwidth = 3;
+        constraints.gridwidth = 2;
         this.add(label,constraints);
         constraints = new GridBagConstraints();
         this.comboBox = new JComboBox<>(Category.values());
@@ -75,6 +75,7 @@ public class ChangePanel extends JPanel {
         }
         service.setDiscountForCategory((Category)comboBox.getSelectedItem(), newDiscount);
         table.repopulateTable(service.getListByCategory((Category)comboBox.getSelectedItem()));
+        System.out.println(comboBox.getSelectedItem() + " " + newDiscount);
     }
 
 

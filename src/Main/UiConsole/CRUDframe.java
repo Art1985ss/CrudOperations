@@ -23,7 +23,7 @@ public class CRUDframe extends JFrame {
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         service = new Service(new ProductDatabase());
-        service.populateProductList();
+        service.populateProductList(40);
         table = new ProductTable(service.getProductList(), service, this);
 
 
