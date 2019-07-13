@@ -52,7 +52,7 @@ public class ProductTable extends JPanel {
         //table.getSelectionModel().addListSelectionListener(this.createListener());
         table.getModel().addTableModelListener(this.createModeListener());
         table.setSize(this.getSize());
-        //table.setAutoCreateRowSorter(true);
+        table.setAutoCreateRowSorter(true);
         table.repaint();
         this.add(new JScrollPane(table));
         this.repaint();
@@ -77,7 +77,7 @@ public class ProductTable extends JPanel {
         //table.getSelectionModel().addListSelectionListener(this.createListener());
         table.getModel().addTableModelListener(this.createModeListener());
         table.setSize(this.getSize());
-        //table.setAutoCreateRowSorter(true);
+        table.setAutoCreateRowSorter(true);
         table.repaint();
         this.add(new JScrollPane(table));
         this.repaint();
