@@ -12,11 +12,14 @@ import java.util.Map;
 
 public class AddPanel extends JPanel {
     private JButton button;
+    private JButton populateBtn;
+    private JLabel label;
+    private JTextField countTextField;
     private Service service;
     private ProductTable table;
 
     public AddPanel(Service service, ProductTable table) {
-        this.setLayout(new BorderLayout());
+        this.setLayout(new GridLayout(0,1,3,3));
         this.table = table;
         button = new JButton("Add product");
         this.service = service;
@@ -27,6 +30,24 @@ public class AddPanel extends JPanel {
             }
         });
         this.add(button);
+        this.label = new JLabel("Number of random products to be inserted :");
+        this.add(label);
+        this.countTextField = new JTextField();
+        this.add(countTextField);
+        this.populateBtn = new JButton("Add random products");
+        this.populateBtn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                try{
+                    service.populateProductList(Integer.parseInt(countTextField.getText()));
+                }catch (NumberFormatException e){
+                    JOptionPane.showMessageDialog(null, "Please insert integer in the text field.");
+                }
+                table.repopulateTable(service.getProductList());
+            }
+        });
+        this.add(populateBtn);
+        this.setVisible(true);
     }
     private void createAddForm(){
         JFrame addFrame = new JFrame("Add new product");
