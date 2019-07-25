@@ -100,7 +100,7 @@ public class Service implements DatabaseService{
     }
 
     public void showWarning(String message){
-        JFrame frame = new JFrame("main.service error!");
+        JFrame frame = new JFrame("crud.service error!");
         frame.setLayout(new BorderLayout());
         frame.add(new Label(message),BorderLayout.PAGE_START);
         JButton btn = new JButton("Ok");
