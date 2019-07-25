@@ -1,7 +1,7 @@
 package main.database;
 
 
-import crud.UiConsole.CRUDframe;
+import main.UiConsole.CRUDframe;
 
 public class CrudGo {
     public static void main(String[] args) {
