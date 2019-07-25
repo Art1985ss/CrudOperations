@@ -1,7 +1,7 @@
-package Main.Database;
+package main.database;
 
 
-import Main.UiConsole.CRUDframe;
+import main.UiConsole.CRUDframe;
 
 public class Test {
     public static void main(String[] args) {

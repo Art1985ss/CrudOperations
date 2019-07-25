@@ -1,8 +1,7 @@
-package Main.Service;
+package main.service;
 
-import Main.Database.Category;
-import Main.Database.Product;
-import com.sun.source.tree.AssertTree;
+import main.database.Category;
+import main.database.Product;
 import org.junit.Before;
 import org.junit.Test;
 

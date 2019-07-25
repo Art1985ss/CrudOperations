@@ -1,8 +1,8 @@
-package Main.UiConsole;
+package main.UiConsole;
 
 
-import Main.Database.*;
-import Main.Service.*;
+import main.database.*;
+import main.service.*;
 
 import javax.swing.*;
 import java.awt.*;

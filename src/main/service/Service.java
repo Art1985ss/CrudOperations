@@ -1,8 +1,8 @@
-package Main.Service;
+package main.service;
 
-import Main.Database.Category;
-import Main.Database.Product;
-import Main.Database.ProductDatabase;
+import main.database.Category;
+import main.database.Product;
+import main.database.ProductDatabase;
 
 import javax.swing.*;
 import java.awt.*;
@@ -100,7 +100,7 @@ public class Service implements DatabaseService{
     }
 
     public void showWarning(String message){
-        JFrame frame = new JFrame("Main.Service error!");
+        JFrame frame = new JFrame("main.service error!");
         frame.setLayout(new BorderLayout());
         frame.add(new Label(message),BorderLayout.PAGE_START);
         JButton btn = new JButton("Ok");

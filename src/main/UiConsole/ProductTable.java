@@ -1,7 +1,7 @@
-package Main.UiConsole;
+package main.UiConsole;
 
-import Main.Database.Product;
-import Main.Service.*;
+import main.database.Product;
+import main.service.*;
 
 import javax.swing.*;
 import javax.swing.event.ListSelectionEvent;

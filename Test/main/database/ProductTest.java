@@ -1,6 +1,5 @@
-package Main.Database;
+package main.database;
 
-import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
